@@ -1,4 +1,5 @@
 import React from 'react'
+import './PixelRow.css';
 import Pixel from './Pixel'
 const PixelRow = ({width,colors}) => {
 
@@ -10,8 +11,7 @@ const PixelRow = ({width,colors}) => {
   }
 
   return (
-    <div>
-      This is a Pixel Row
+    <div className ="pixel__row">
       {pixels}
     </div>
   )

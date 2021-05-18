@@ -1,7 +1,8 @@
 import React from 'react'
 import PixelRow from './PixelRow';
+import './Canvas.css';
 
-const Canvas = ({width, height}) => {
+const Canvas = ({width, height, canVasMode}) => {
 
   const allColors = () => {
     let colors = []
@@ -45,8 +46,7 @@ const Canvas = ({width, height}) => {
   }
 
   return (
-    <div>
-      This is canvas
+    <div class="canvas">
       {pixelRows}
     </div>
   )

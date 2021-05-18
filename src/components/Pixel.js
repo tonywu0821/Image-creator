@@ -1,5 +1,5 @@
-import React from 'react'
-
+import React from 'react';
+import './Pixel.css';
 const Pixel = ({color}) => {
 
   const backGroungColor = (color) => {
@@ -7,8 +7,7 @@ const Pixel = ({color}) => {
   }
 
   return (
-    <div style={{backgroundColor:backGroungColor(color)}}>
-      Pixel
+    <div className = "pixel" style={{backgroundColor:backGroungColor(color)}}>
     </div>
   )
 }

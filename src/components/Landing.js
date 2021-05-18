@@ -1,16 +1,28 @@
 import Canvas from './Canvas'
 import {useState, useEffect} from 'react'
+import './Landing.css';
 
 const Landing = () => {
   const [canvasWidth, setCanvasWidth] = useState(5);
   const [canvasHeight, setCanvasHeight] = useState(5);
   const [canvasMode, setCanvasMode] = useState("normal");
+  const [buttonText, setButtonText] = useState("CREATE");
   const [isSubmit,setIsSubmit] = useState(false);
 
+
+  const handleSubmit = () =>{
+    //check if width*height = 32768
+    if(true){
+      setIsSubmit(!isSubmit);
+      buttonText == "RESET" ? setButtonText("CREATE"): setButtonText("RESET")
+    }
+    setIsSubmit(!isSubmit);
+    setButtonText("RESET")
+  }
   return (
-    <div>
-      <h2>Image Creator</h2>
-      <div id = "options">
+    <div class ="landing">
+      {!isSubmit && <h2>Cutomize your image</h2>}
+      {!isSubmit && (<div id = "options">
         <div>
           <span>Width: </span>
           <input
@@ -36,11 +48,10 @@ const Landing = () => {
             <option value="random">random</option>
           </select>
         </div>
-        <button>Create Image Now!</button>
-
-
       </div>
-      <Canvas width={canvasWidth} height={canvasHeight}/>
+      )}
+      <button className="button"onClick={handleSubmit}>{buttonText}</button>
+      {isSubmit && (<Canvas width={canvasWidth} height={canvasHeight} canvasMode={canvasMode} />)}
     </div>
   )
 }
