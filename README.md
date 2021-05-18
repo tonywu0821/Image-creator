@@ -11,10 +11,10 @@ Technologies involved:
 * Heroku
 
 ## Demo
-* **Width:**  The **width** of an image.
-* **Height:**  The **height** of an image.
+* **Width:**  The **width** of an generated image.
+* **Height:**  The **height** of an generated image.
 * **Method:** The method to distribute colors.
-* **CREATE:** Generate an image based on user input data.
+* **CREATE:** Generate an image based on user input.
 
 <div align="center">
   <img src="demo/demo1.png">

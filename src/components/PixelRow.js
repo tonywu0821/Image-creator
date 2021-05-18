@@ -5,7 +5,7 @@ const PixelRow = ({width,colors}) => {
 
   let pixels = [];
 
-  for(let i = 0; i < width; i++){
+  for (let i = 0; i < width; i++) {
     pixels.push(<Pixel color={colors[i]} />);
   }
 

@@ -62,9 +62,10 @@ const Landing = () => {
         </div>
         <div>
           <span>Method: </span>
-          <select id = "method" onChange = {e => {
+          <select id = "method" onChange = {(e) => {
             setCanvasMode(e.target.value);
-          }}>
+            }}
+          >
             <option value="normal">normal</option>
             <option value="random">random</option>
           </select>

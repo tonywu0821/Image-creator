@@ -54,10 +54,10 @@ const Canvas = ({width, height, canvasMode}) => {
   
   let pixelRows = [];
   console.log(canvasMode);
-  if(canvasMode === "normal"){
+  if (canvasMode === "normal") {
     let colorPool = normalDistribution();
     pixelRows = createPixelRows(width, height, colorPool);
-  } else if (canvasMode === "random"){
+  } else if (canvasMode === "random") {
     let colorPool = randomDistribution();
     pixelRows = createPixelRows(width, height, colorPool);
   }
