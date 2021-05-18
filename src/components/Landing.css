@@ -6,9 +6,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  font-size: 1.5rem;
 }
 
 .landing > h2 {
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
@@ -19,15 +21,17 @@
 }
 
 #options input{
+  height: 1.5rem;
   width: 4rem;
   text-align: center;
   border: 1px solid gray;
   border-radius: 0.25rem;
 }
 
-#options input{
-  text-align: center;
-  border: 1px solid gray;
+#method{
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 0.25rem;
 }
 
 .button {
@@ -39,7 +43,7 @@
   border: 1px solid transparent;
   transition: background-color 0.5s ease-in-out;
   font-weight: bold;
-  font-family: 'Play', sans-serif;
+  font-family: 'Shadows Into Light', cursive;
   margin-bottom: 1rem;
 }
 

@@ -2,8 +2,9 @@ import React from 'react'
 import PixelRow from './PixelRow';
 import './Canvas.css';
 
-const Canvas = ({width, height, canVasMode}) => {
+const Canvas = ({width, height, canvasMode}) => {
 
+  // generate all colors
   const allColors = () => {
     let colors = []
     for(let i = 1; i < 33; i++){
@@ -17,32 +18,48 @@ const Canvas = ({width, height, canVasMode}) => {
     return colors;
   }
 
-  const normalDistribution = (width, height) => {
-    let colorPool = allColors();
-    console.log(colorPool);
-    console.log("width:"+width);
-    console.log("height:"+height);
-
+  // assign colors to each pixel row
+  const createPixelRows = (width, height, colorPool) => {
     let colors = new Array(height);
     for (let i = 0, k = 0; i < height; i++) {
       colors[i] = new Array(width);
       for (let j = 0; j < width; j++) {
-        //console.log("kkkkkk:"+k)
-        //console.log(colorPool[k]);
         colors[i][j] = colorPool[k++];
       }
     }
-    //console.log("OOO");
-    console.log(colors[0][0]);
-    return colors;
+    let pixelRows = [];
+    for(let i = 0; i < height; i++){
+      pixelRows.push(<PixelRow key={i} width={width} colors={colors[i]} />);
+    }
+    return pixelRows;
+  }
+
+  const normalDistribution = (width, height) => {
+    return allColors();
+  }
+
+  const randomDistribution = (width,height) => {
+    return suffleArray(allColors());
+  }
+
+  const suffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--){
+      let j = Math.floor(Math.random() * (i + 1));
+      let temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
   }
   
-  
-  let colors = normalDistribution(width,height);
-  console.log(colors);
   let pixelRows = [];
-  for(let i = 0; i < height; i++){
-    pixelRows.push(<PixelRow key={i} width={width} colors={colors[i]} />);
+  console.log(canvasMode);
+  if(canvasMode === "normal"){
+    let colorPool = normalDistribution();
+    pixelRows = createPixelRows(width, height, colorPool);
+  } else if (canvasMode === "random"){
+    let colorPool = randomDistribution();
+    pixelRows = createPixelRows(width, height, colorPool);
   }
 
   return (
