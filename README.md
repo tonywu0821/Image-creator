@@ -27,7 +27,7 @@ Technologies involved:
 </div>
 
 
-## Test it in locally
+## Test it locally
 In the project directory, you can run:
 ### `npm start`
 
