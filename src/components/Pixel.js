@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Pixel = () => {
+const Pixel = ({color}) => {
+
+  const backGroungColor = (color) => {
+    return `rgb(${color[0]}, ${color[1]}, ${color[2]})`
+  }
+
   return (
-    <div>
-      This is Pixel
+    <div style={{backgroundColor:backGroungColor(color)}}>
+      Pixel
     </div>
   )
 }
