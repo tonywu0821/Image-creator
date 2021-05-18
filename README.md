@@ -1,5 +1,5 @@
 # Image Creator
-**Image Creatoris** a single-page web application that can generate an image with 32,768 discrete colors and each colour occurs exactly once. [Try it on heroku!]()
+**Image Creatoris** a single-page web application that can generate an image with 32,768 discrete colors and each colour occurs exactly once. [Try it on heroku!](https://image-creator-0518.herokuapp.com/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
